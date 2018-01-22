@@ -18,6 +18,9 @@ struct Condition: Codable {
 struct Current: Codable {
     let temp_c: Double
     let condition: Condition
+    let wind_kph: Double
+    let humidity: Double
+    let precip_in: Double
 }
 
 

@@ -15,8 +15,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet private weak var cityName: UILabel!
     @IBOutlet private weak var temperature: UILabel!
+    @IBOutlet private weak var humidity: UILabel!
+    @IBOutlet private weak var chanceOfRain: UILabel!
+    @IBOutlet private weak var windSpeed: UILabel!
     
     @IBOutlet private weak var searchBar: UISearchBar!
+    
+    @IBOutlet private weak var refreshButton: UIButton!
+    
     
     // DidLoad
     
@@ -26,6 +32,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        searchBar.resignFirstResponder()
         
          let urlRequest = URLRequest(url: URL(string: "https://api.apixu.com/v1/current.json?key=bd216786175b4cc0ac4121919173012&q=\(searchBar.text!.replacingOccurrences(of: " ", with: "%20"))")!)
         
@@ -38,16 +46,18 @@ class ViewController: UIViewController, UISearchBarDelegate {
                     DispatchQueue.main.async {
                         self.cityName.text =  "\(object.location.name)"
                         self.temperature.text = "\(object.current.temp_c)"
+                        self.humidity.text = "\(object.current.wind_kph)"
+                        self.chanceOfRain.text = "\(object.current.precip_in)"
+                        self.windSpeed.text = "\(object.current.wind_kph)"
                     }
                 
                 } catch {
                     print(error)
                 }
             }
-     
-        
-        
         }
+        
+        
         task.resume()
     }
 
