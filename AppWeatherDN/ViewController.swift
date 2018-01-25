@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDelegate {
 
     
    // Outlets
@@ -23,14 +24,84 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet private weak var refreshButton: UIButton!
     
+
+    // Location manager
     
-    // DidLoad
+    var locationManager = CLLocationManager()
+    var latitude: String = ""
+    var longitude: String = ""
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[locations.count-1]
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.stopUpdatingLocation()
+        if location.horizontalAccuracy > 0 {
+            locationManager.stopUpdatingLocation()
+            latitude = String(location.coordinate.latitude)
+            longitude = String(location.coordinate.longitude)
+            getLocation(myLocation: myLocationURL)
+        }
+    }
+    // View did load
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        temperature.text = "°"
+        humidity.text = ""
+        chanceOfRain.text = ""
+        windSpeed.text = ""
         searchBar.delegate = self
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
     }
+ 
+    
+    
+    // Network call
 
+  
+    var myLocationURL: String {
+        get {
+            return "https://api.apixu.com/v1/current.json?key=bd216786175b4cc0ac4121919173012&q=\(latitude),\(longitude)"
+        }
+    }
+    
+    func getLocation(myLocation: String) {
+        guard let urlReq = URL(string: myLocation) else {fatalError("url is not valid") }
+       
+        let task = URLSession.shared.dataTask(with: urlReq) { data, response, error in
+            
+            guard error == nil else { return }
+            
+            guard let httpResponse = response as? HTTPURLResponse else { return }
+            if !(200..<300).contains(httpResponse.statusCode) { return }
+            guard let data = data else { return }
+            
+            do {
+                
+                let decoder = JSONDecoder()
+                let object = try decoder.decode(Object.self, from: data)
+                
+                DispatchQueue.main.async {
+                    
+                    self.cityName.text = "\(object.location.name)"
+                }
+            } catch {
+                print(error)
+            }
+            
+        }
+        task.resume()
+    }
+    
+    
+    
+    // Network call
+        
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         searchBar.resignFirstResponder()
@@ -45,11 +116,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
                
                     DispatchQueue.main.async {
                         self.cityName.text =  "\(object.location.name)"
-                        self.temperature.text = "\(object.current.temp_c)"
-                        self.humidity.text = "\(object.current.wind_kph)"
+                        self.temperature.text = "\(object.current.temp_c)°"
+                        self.humidity.text = "\(object.current.humidity)%"
                         self.chanceOfRain.text = "\(object.current.precip_in)"
-                        self.windSpeed.text = "\(object.current.wind_kph)"
+                        self.windSpeed.text = "\(object.current.wind_kph)kmH"
                     }
+                  
                 
                 } catch {
                     print(error)
@@ -61,6 +133,11 @@ class ViewController: UIViewController, UISearchBarDelegate {
         task.resume()
     }
 
+    @IBAction func refreshMyLocation(_ sender: UIButton) {
+        searchBar.text = ""
+        locationManager.stopUpdatingLocation()
+        print("tu sam")
+    }
 }
 
 

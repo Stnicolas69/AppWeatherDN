@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iOS7 Clean Sky Clouds iPhone 5 Wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="1db-f7-6L6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="iOS7 Clean Sky Clouds iPhone 5 Wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="1db-f7-6L6">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIU-aJ-2dc" userLabel="Temperature">
-                                <rect key="frame" x="105" y="233" width="165" height="84"/>
+                                <rect key="frame" x="120" y="233" width="135" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="2My-eh-lSA"/>
                                 </constraints>
@@ -44,6 +44,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0F-xe-gMq">
+                                <rect key="frame" x="263" y="259" width="62" height="30"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshMyLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O81-8M-xWM"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRw-ps-G0n" userLabel="Humidity">
                                 <rect key="frame" x="16" y="387" width="343" height="80.5"/>
                                 <subviews>
@@ -129,12 +138,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mqa-6N-FLU" secondAttribute="trailing" constant="8" id="7ge-ae-Hcd"/>
                             <constraint firstItem="VRw-ps-G0n" firstAttribute="top" secondItem="ZIU-aJ-2dc" secondAttribute="bottom" constant="70" id="8FX-Wv-4Mr"/>
                             <constraint firstItem="W4I-R7-1z4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9i5-kI-l4B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZIU-aJ-2dc" secondAttribute="trailing" constant="105" id="C4W-sN-GMh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p0F-xe-gMq" secondAttribute="bottom" constant="378" id="9tI-2E-pwZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZIU-aJ-2dc" secondAttribute="trailing" constant="120" id="C4W-sN-GMh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W4I-R7-1z4" secondAttribute="trailing" id="GTU-Qh-ZCK"/>
-                            <constraint firstItem="ZIU-aJ-2dc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="IsK-Ae-2af"/>
+                            <constraint firstItem="ZIU-aJ-2dc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="IsK-Ae-2af"/>
                             <constraint firstItem="W4I-R7-1z4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MMt-Vl-KID"/>
                             <constraint firstItem="ZIU-aJ-2dc" firstAttribute="top" secondItem="mqa-6N-FLU" secondAttribute="bottom" constant="44" id="Nmz-Zf-kLA"/>
                             <constraint firstItem="v4v-Xl-U9D" firstAttribute="top" secondItem="hpY-a5-mH6" secondAttribute="bottom" constant="8" id="OVH-6C-JPa"/>
+                            <constraint firstItem="p0F-xe-gMq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="195" id="PNr-zr-1cD"/>
                             <constraint firstItem="1db-f7-6L6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S0k-Pc-E6L"/>
                             <constraint firstItem="v4v-Xl-U9D" firstAttribute="trailing" secondItem="hpY-a5-mH6" secondAttribute="trailing" id="WLh-Gg-S0N"/>
                             <constraint firstItem="v4v-Xl-U9D" firstAttribute="leading" secondItem="hpY-a5-mH6" secondAttribute="leading" id="Wku-YP-lun"/>
@@ -143,11 +154,13 @@
                             <constraint firstItem="hpY-a5-mH6" firstAttribute="leading" secondItem="VRw-ps-G0n" secondAttribute="leading" id="aFC-it-yTR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1db-f7-6L6" secondAttribute="trailing" id="cO4-yv-pf4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v4v-Xl-U9D" secondAttribute="bottom" constant="20" id="dEa-Gl-foV"/>
+                            <constraint firstItem="p0F-xe-gMq" firstAttribute="leading" secondItem="ZIU-aJ-2dc" secondAttribute="trailing" constant="8" id="fKn-El-i8L"/>
                             <constraint firstItem="mqa-6N-FLU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="fbj-a7-ByQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VRw-ps-G0n" secondAttribute="trailing" constant="16" id="nCc-SS-Orh"/>
                             <constraint firstItem="VRw-ps-G0n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nPX-QR-Te0"/>
                             <constraint firstItem="1db-f7-6L6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="nrZ-Cb-scL"/>
                             <constraint firstItem="1db-f7-6L6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="op0-EK-gNu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p0F-xe-gMq" secondAttribute="trailing" constant="50" id="qLX-dM-ZU6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -156,6 +169,7 @@
                         <outlet property="chanceOfRain" destination="WwP-Nk-G2s" id="UOg-q5-Q2S"/>
                         <outlet property="cityName" destination="mqa-6N-FLU" id="GKQ-Ra-VzR"/>
                         <outlet property="humidity" destination="PTm-QA-gPE" id="uk1-Fx-Hsc"/>
+                        <outlet property="refreshButton" destination="p0F-xe-gMq" id="IKd-qG-rE6"/>
                         <outlet property="searchBar" destination="W4I-R7-1z4" id="LXw-8P-BIf"/>
                         <outlet property="temperature" destination="ZIU-aJ-2dc" id="hBj-Lr-Oj6"/>
                         <outlet property="windSpeed" destination="y2V-Pb-YXF" id="Wct-oB-sv9"/>
