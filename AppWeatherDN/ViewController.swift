@@ -17,7 +17,7 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
     @IBOutlet private weak var cityName: UILabel!
     @IBOutlet private weak var temperature: UILabel!
     @IBOutlet private weak var humidity: UILabel!
-    @IBOutlet private weak var chanceOfRain: UILabel!
+    @IBOutlet private weak var pressure: UILabel!
     @IBOutlet private weak var windSpeed: UILabel!
     
     @IBOutlet private weak var searchBar: UISearchBar!
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
         super.viewDidLoad()
         temperature.text = "°"
         humidity.text = ""
-        chanceOfRain.text = ""
+        pressure.text = ""
         windSpeed.text = ""
         searchBar.delegate = self
         locationManager.delegate = self
@@ -89,6 +89,9 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
                 DispatchQueue.main.async {
                     
                     self.cityName.text = "\(object.location.name)"
+//                    self.humidity.text = "\(object.current.humidity)"
+//                    self.pressure.text = "\(object.current.pressure_mb)"
+//                    self.windSpeed.text = "\(object.current.wind_kph)"
                 }
             } catch {
                 print(error)
@@ -118,7 +121,7 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
                         self.cityName.text =  "\(object.location.name)"
                         self.temperature.text = "\(object.current.temp_c)°"
                         self.humidity.text = "\(object.current.humidity)%"
-                        self.chanceOfRain.text = "\(object.current.precip_in)"
+                        self.pressure.text = "\(object.current.pressure_mb)mb"
                         self.windSpeed.text = "\(object.current.wind_kph)kmH"
                     }
                   

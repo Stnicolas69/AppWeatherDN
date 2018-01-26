@@ -62,7 +62,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeQ-ln-ynd" userLabel="Name">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeQ-ln-ynd" userLabel="Name">
                                         <rect key="frame" x="8" y="30" width="68.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -82,14 +82,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpY-a5-mH6" userLabel="ChanceOfRain">
                                 <rect key="frame" x="16" y="475.5" width="343" height="82"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="ChanceOfRain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPk-VT-Phh" userLabel="Name">
-                                        <rect key="frame" x="8" y="31" width="110" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Pressure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPk-VT-Phh" userLabel="Name">
+                                        <rect key="frame" x="8" y="31" width="114.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="o.oo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwP-Nk-G2s" userLabel="Unit">
-                                        <rect key="frame" x="155" y="31" width="33.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="mb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwP-Nk-G2s" userLabel="Unit">
+                                        <rect key="frame" x="159.5" y="31" width="24.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4v-Xl-U9D" userLabel="WindSpeed">
                                 <rect key="frame" x="16" y="565.5" width="343" height="81.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WindSpeed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcG-K2-Ff9" userLabel="Name">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WindSpeed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcG-K2-Ff9" userLabel="Name">
                                         <rect key="frame" x="8" y="31" width="89" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -166,9 +166,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vdp-y3-Gvc"/>
                     <connections>
-                        <outlet property="chanceOfRain" destination="WwP-Nk-G2s" id="UOg-q5-Q2S"/>
                         <outlet property="cityName" destination="mqa-6N-FLU" id="GKQ-Ra-VzR"/>
                         <outlet property="humidity" destination="PTm-QA-gPE" id="uk1-Fx-Hsc"/>
+                        <outlet property="pressure" destination="WwP-Nk-G2s" id="egr-eS-tj8"/>
                         <outlet property="refreshButton" destination="p0F-xe-gMq" id="IKd-qG-rE6"/>
                         <outlet property="searchBar" destination="W4I-R7-1z4" id="LXw-8P-BIf"/>
                         <outlet property="temperature" destination="ZIU-aJ-2dc" id="hBj-Lr-Oj6"/>

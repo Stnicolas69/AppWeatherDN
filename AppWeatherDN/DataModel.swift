@@ -21,6 +21,7 @@ struct Current: Codable {
     let wind_kph: Double
     let humidity: Double
     let precip_in: Double
+    let pressure_mb: Double
 }
 
 
