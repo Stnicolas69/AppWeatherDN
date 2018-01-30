@@ -13,7 +13,9 @@ struct Location: Codable {
 }
 
 struct Condition: Codable {
-    let icon: String
+    var text: String
+    var icon: String
+    var code: Int
 }
 struct Current: Codable {
     let temp_c: Double

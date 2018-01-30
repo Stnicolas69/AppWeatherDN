@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0F-xe-gMq">
-                                <rect key="frame" x="263" y="259" width="62" height="30"/>
+                                <rect key="frame" x="263" y="264" width="62" height="23"/>
                                 <state key="normal" title="Refresh">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -79,7 +79,7 @@
                                     <constraint firstItem="PTm-QA-gPE" firstAttribute="centerX" secondItem="VRw-ps-G0n" secondAttribute="centerX" id="hg3-j5-iOr"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpY-a5-mH6" userLabel="ChanceOfRain">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpY-a5-mH6" userLabel="Pressure">
                                 <rect key="frame" x="16" y="475.5" width="343" height="82"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Pressure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPk-VT-Phh" userLabel="Name">
@@ -138,14 +138,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mqa-6N-FLU" secondAttribute="trailing" constant="8" id="7ge-ae-Hcd"/>
                             <constraint firstItem="VRw-ps-G0n" firstAttribute="top" secondItem="ZIU-aJ-2dc" secondAttribute="bottom" constant="70" id="8FX-Wv-4Mr"/>
                             <constraint firstItem="W4I-R7-1z4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9i5-kI-l4B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p0F-xe-gMq" secondAttribute="bottom" constant="378" id="9tI-2E-pwZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p0F-xe-gMq" secondAttribute="bottom" constant="380" id="9tI-2E-pwZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZIU-aJ-2dc" secondAttribute="trailing" constant="120" id="C4W-sN-GMh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W4I-R7-1z4" secondAttribute="trailing" id="GTU-Qh-ZCK"/>
                             <constraint firstItem="ZIU-aJ-2dc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="IsK-Ae-2af"/>
                             <constraint firstItem="W4I-R7-1z4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MMt-Vl-KID"/>
                             <constraint firstItem="ZIU-aJ-2dc" firstAttribute="top" secondItem="mqa-6N-FLU" secondAttribute="bottom" constant="44" id="Nmz-Zf-kLA"/>
                             <constraint firstItem="v4v-Xl-U9D" firstAttribute="top" secondItem="hpY-a5-mH6" secondAttribute="bottom" constant="8" id="OVH-6C-JPa"/>
-                            <constraint firstItem="p0F-xe-gMq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="195" id="PNr-zr-1cD"/>
+                            <constraint firstItem="p0F-xe-gMq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="PNr-zr-1cD"/>
                             <constraint firstItem="1db-f7-6L6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S0k-Pc-E6L"/>
                             <constraint firstItem="v4v-Xl-U9D" firstAttribute="trailing" secondItem="hpY-a5-mH6" secondAttribute="trailing" id="WLh-Gg-S0N"/>
                             <constraint firstItem="v4v-Xl-U9D" firstAttribute="leading" secondItem="hpY-a5-mH6" secondAttribute="leading" id="Wku-YP-lun"/>
