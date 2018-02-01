@@ -179,6 +179,7 @@
                         <outlet property="refreshButton" destination="p0F-xe-gMq" id="IKd-qG-rE6"/>
                         <outlet property="searchBar" destination="W4I-R7-1z4" id="LXw-8P-BIf"/>
                         <outlet property="temperature" destination="ZIU-aJ-2dc" id="hBj-Lr-Oj6"/>
+                        <outlet property="weatherIcon" destination="iR8-Xq-cF2" id="Fa3-aC-DJq"/>
                         <outlet property="windSpeed" destination="y2V-Pb-YXF" id="Wct-oB-sv9"/>
                     </connections>
                 </viewController>

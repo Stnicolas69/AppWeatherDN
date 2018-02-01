@@ -19,10 +19,14 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
     @IBOutlet private weak var humidity: UILabel!
     @IBOutlet private weak var pressure: UILabel!
     @IBOutlet private weak var windSpeed: UILabel!
-    
     @IBOutlet private weak var searchBar: UISearchBar!
     
+    @IBOutlet private weak var weatherIcon: UIImageView!
+    
     @IBOutlet private weak var refreshButton: UIButton!
+    
+    
+    
     
 
     // Location manager
@@ -121,9 +125,23 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
                         self.humidity.text = "\(object.current.humidity)%"
                         self.pressure.text = "\(object.current.pressure_mb)mb"
                         self.windSpeed.text = "\(object.current.wind_kph)kmH"
+                    
+               
+                    let iconCode: String = String(describing: object.current.condition.icon)
+                    let start = iconCode.index(iconCode.startIndex, offsetBy: 34)
+                    let end = iconCode.index(iconCode.endIndex, offsetBy: -4)
+                    let range = start..<end
+                    let mySubstring = iconCode[range]
+                    let myString = String(mySubstring)
+//                     print(myString)
+                    self.weatherIcon.image = UIImage(named: myString)
+                    
                     }
-                  
-                
+                    
+
+                    
+                    
+                    
                 } catch {
                     print(error)
                 }
@@ -134,6 +152,14 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
         task.resume()
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func refreshMyLocation(_ sender: UIButton) {
         searchBar.text = ""
         locationManager.stopUpdatingLocation()
