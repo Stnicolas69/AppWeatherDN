@@ -19,7 +19,6 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
     @IBOutlet private weak var humidity: UILabel!
     @IBOutlet private weak var pressure: UILabel!
     @IBOutlet private weak var windSpeed: UILabel!
-    @IBOutlet private weak var icon: UILabel!
     
     @IBOutlet private weak var searchBar: UISearchBar!
     
