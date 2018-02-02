@@ -57,7 +57,7 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
+
     }
  
     
@@ -94,6 +94,15 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
                     self.humidity.text = "\(object.current.humidity)"
                     self.pressure.text = "\(object.current.pressure_mb)"
                     self.windSpeed.text = "\(object.current.wind_kph)"
+                    
+                    let iconCode: String = String(describing: object.current.condition.icon)
+                    let start = iconCode.index(iconCode.startIndex, offsetBy: 34)
+                    let end = iconCode.index(iconCode.endIndex, offsetBy: -4)
+                    let range = start..<end
+                    let mySubstring = iconCode[range]
+                    let myString = String(mySubstring)
+                    //                     print(myString)
+                    self.weatherIcon.image = UIImage(named: myString)
                 }
             } catch {
                 print(error)
@@ -119,7 +128,7 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
                 do {
                     let object = try JSONDecoder().decode(Object.self, from: data!)
                
-                    DispatchQueue.main.async {
+            DispatchQueue.main.async {
                         self.cityName.text =  "\(object.location.name)"
                         self.temperature.text = "\(object.current.temp_c)°"
                         self.humidity.text = "\(object.current.humidity)%"
@@ -137,10 +146,7 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
                     self.weatherIcon.image = UIImage(named: myString)
                     
                     }
-                    
-
-                    
-                    
+        
                     
                 } catch {
                     print(error)
@@ -152,12 +158,6 @@ class ViewController: UIViewController, UISearchBarDelegate, CLLocationManagerDe
         task.resume()
     }
 
-    
-    
-    
-    
-    
-    
     
     
     @IBAction func refreshMyLocation(_ sender: UIButton) {
